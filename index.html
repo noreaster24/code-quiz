@@ -9,6 +9,7 @@
 
     <title>Code-Quiz</title>
 </head>
+
 <header>
     <nav>
         <div class="high-score">
@@ -22,16 +23,27 @@
 </header>
 
 <body>
-    <section id="main-container">
-        <div class="main-container">
+
+    <div class="container">
+        <div class="question container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid"></div>
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button is="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+    </div>
+
+    <!-- <div class="controls"></div>
             <h2>Welcome!</h2>
             <p>This is a timed quiz designed to test your fundamental knowledge of coding. <br/>You will have 60 seconds to
                 answer 10 questions. Press the start button when you're ready.</p>
-            <h3>Good Luck!</h3>
-            <button id="start-button">Start</button>
-        </div>
-    </section>
-
+            <h3>Good Luck!</h3> -->
 
     <script src="./assets/js/script.js"></script>
 </body>
