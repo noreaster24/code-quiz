@@ -10,3 +10,9 @@ nav {
 nav a {
     color: #efefef;
 }
+
+.btn {
+    color: #efefef;
+    background-color: black;
+    border-radius: 20%;
+}
