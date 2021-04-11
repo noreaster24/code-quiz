@@ -49,44 +49,34 @@ var questions = [
     },
 ]
 
-// timer that counts down from 60
-function countDown() {
+// Timer that counts down from 60
+function countdown() {
     var timeLeft = 60;
 
-    var timerInterval = setInterval(function () {
+    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+    var timeInterval = setInterval(function () {
+        // As long as the `timeLeft` is greater than 1
         if (timeLeft > 1) {
+            // Set the `textContent` of `timerEl` to show the remaining seconds
             timerEl.textContent = timeLeft + ' seconds remaining';
+            // Decrement `timeLeft` by 1
             timeLeft--;
         } else if (timeLeft === 1) {
+            // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
             timerEl.textContent = timeLeft + ' second remaining';
             timeLeft--;
         } else {
+            // Once `timeLeft` gets to 0, set `timerEl` to an empty string
             timerEl.textContent = '';
+            // Use `clearInterval()` to stop the timer
             clearInterval(timeInterval);
+            // Call the `displayMessage()` function
+            displayMessage();
         }
     }, 1000);
 }
- startBtn.onclick = countdown;
 
-// // Countdown function when start button is pressed
-// document.addEventListener('DOMContentLoaded', () => {
-//     var timeLeftDisplay = document.querySelector('#time-left')
-//     var startBtn = document.querySelector('#start-btn btn')
-//     timeLeft = 60;
-
-//     function countDown() {
-//         setInterval(function () {
-//             if (timeLeft <= 0) {
-//                 clearInterval(timeLeft = 0)
-//             }
-//             timeLeftDisplay.innerHTML = timeLeft
-//             timeLeft -= 1
-//         }, 1000)
-//     }
-
-// startBtn.addEventListener('click', countDown);
-
-// })
+startBtn.onclick = countdown;
 
     // // Loop for every question
     // function questionsStart() {
