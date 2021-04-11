@@ -1,12 +1,14 @@
 * {
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    margin: 0;
+    padding: 0;
 }
 
 header {
     padding: 20px 35px;
+    width: 100%;
     display: flex;
-    background-color: navy;
+    background-image: url("../images/programming-banner.jpeg");
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -17,12 +19,55 @@ header nav {
     align-items: center;
 }
 
+.scores {
+    color: #efefef;
+}
+
 body {
     padding: 0;
     margin: 0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
 }
+
+.welcome-prompt {
+padding: 60px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.welcome-prompt p {
+    color: red;
+    padding: 20px;
+}
+
+.welcome-prompt h3 {
+    padding: 10px auto;
+}
+
+.welcome-prompt button {
+    background-color: black;
+    color: #efefef;
+    border-radius: 20px;
+    border: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transform: transition 0.4s;
+}
+
+.welcome-prompt button:hover {
+    background-color: red;
+    color: yellow;
+}
+
+.welcome-prompt button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }   
+
+
+
