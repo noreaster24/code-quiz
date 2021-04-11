@@ -20,15 +20,21 @@
         </nav>
     </header>
 
-    <div class="welcome-prompt">
+    <div class="welcome-prompt" id="welcome">
         <h2>Welcome!</h2>
         <p>This is a timed quiz designed to test your fundamental knowledge of coding. <br />You will have 60 seconds to
             answer 10 questions. Press the start button when you're ready.</p>
         <h3>Good Luck!</h3>
         <button id="start" class="start">Start</button>
     </div>
-
-    <div class="questions" id="questions"></div>
+    <div class="quiz" id="quiz" style="display: none">
+        <div class="question" id="question"></div>
+        <div class="choices" id="choices">
+            <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+            <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+            <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+        </div>
+    </div>
 
     <script src="./assets/js/script.js"></script>
 </body>
