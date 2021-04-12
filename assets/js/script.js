@@ -19,10 +19,8 @@ function buildQuiz() {
     // Variable to store the HTML output
     const output = [];
     
-    questionStart();
-
     // Loop for every question
-    questionsStart(question[i].question); {
+    // questionsStart(question[i].question); {
         
 
         
@@ -37,6 +35,7 @@ function showResults() {
 
 function questionStart() {
     for (var i = 0; i < myQuestions.length; i++) {
+        // Need to convert this to DOM container
         var response = window.prompt(MyQuestions[i].question);
         if (response === questions[i].correctAnswer) {
             score++;
@@ -47,7 +46,7 @@ function questionStart() {
         }
     }
     };
-}
+// }
 
 // Quiz questions array with the correct answers
 const myQuestions = [

@@ -1,5 +1,9 @@
 # code-quiz
 
+## The assignment is currently incomplete and I am struggling to create the function to add the question array into the DOM.
+
+### I will continue to update this assignment
+
 # User Story
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
