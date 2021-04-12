@@ -19,19 +19,24 @@
             <h3 id="countdown"></h3>
         </nav>
     </header>
+    <section class="intro">
+        <div class="welcome-prompt hide" id="welcome">
+            <h2>Welcome!</h2>
+            <p>This is a timed quiz designed to test your fundamental knowledge of coding. <br />You will have 60 seconds to
+                answer 10 questions. Press the start button when you're ready.</p>
+            <h3>Good Luck!</h3>
+            <button id="start" class="start">Start</button>
+        </div>
+    </section>
     <section>
-        <div class="container">
-            <div id="question-container" class="hide">
-                <div id="question">Question</div>
+        <div id="container" class="container hide">
+            <div id="question-container">
+                <div class="question" id="question">Question</div>
                 <div id="answer-buttons" class="btn-grid">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
+                    <button class="btn" id="a" onClick="checkAnswer('a')">Answer 1</button>
+                    <button class="btn" id="b" onClick="checkAnswer('b')">Answer 2</button>
+                    <button class="btn" id="c" onClick="checkAnswer('c')">Answer 3</button>
                 </div>
-            </div>
-            <div class="controls">
-                <button id="start-btn" class="start-btn btn">Start</button>
-                <button id="next-btn" class="next-btn btn hide">Next</button>
             </div>
         </div>
     </section>
