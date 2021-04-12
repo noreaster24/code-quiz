@@ -1,116 +1,56 @@
 var timerEl = document.getElementById('countdown');
-var mainEl = document.getElementById('welcome');
-var quiz = document.getElementById('quiz');
-var question = document.getElementById('question');
+var mainEl = document.getElementById('main');
 var startBtn = document.getElementById('start');
-var choiceA = document.getElementById('A');
-var choiceB = document.getElementById('B');
-var choiceC = document.getElementById('C');
+var questionsEl = document.getElementById('questions');
 // Starting score
 var score = 0;
-
-
 
 // Quiz questions array with the correct answers
 var questions = [
     {
-        question: "What tag can be used to insert a line break or blank line in an HTML document?",
-        choiceA: "<br></br>",
-        choiceB: "<body></body>",
-        choiceC: "<head></head>",
-        correct: "A"
-    }, {
-        question: "What does CSS stand for?",
-        choiceA: "Computer Shared Sheets",
-        choiceB: "Cascading Style Sheets",
-        choiceC: "Customers Sounds Stupid",
-        correct: "B"
-    }, {
-        question: "What's the correct tag for the largest heading?",
-        choiceA: "Heading",
-        choiceB: "Head",
-        choiceC: "H1",
-        correct: "C"
-    }, {
-        question: "What's the correct tag to make text bold?",
-        choiceA: "B",
-        choiceB: "bold",
-        choiceC: "Bld",
-        correct: "B"
-    }, {
-        question: "What are the CSS properties that are used to add space around sections of content?",
-        choiceA: "Cleaner",
-        choiceB: "Spacing",
-        choiceC: "Padding",
-        correct: "C"
-    }, {
-        question: "True or False: Is is not possible to make a webpage that adapts to different size screens.",
-        choiceA: "True",
-        choiceB: "False",
-        choiceC: "Trick Question",
-        correct: "B"
-    }, {
-        question: "What kind of JS statement is used to execute actions based on a trigger or condition?",
-        choiceA: "Conditional Statement",
-        choiceB: "Boolean Variable",
-        choiceC: "Fired Event",
-        correct: "A"
-    }, {
-        question: "In JS, what element is used to store and manipulate text?",
-        choiceA: "Strings",
-        choiceB: "Arrays",
-        choiceC: "Variables",
-        correct: "A"
-    }, {
-        question: "In JS, what element is used to store multiple values in a single variable?",
-        choiceA: "Strings",
-        choiceB: "Arrays",
-        choiceC: "Variables",
-        correct: "B"
-    }, {
-        question: "What is the format called for storing and transporting data?",
-        choiceA: "JSON",
-        choiceB: "Syntax",
-        choiceC: "HTML",
-        correct: "A"
-    }
-];
-
-// Loop for every question
-function questionsArray() {
-
-    for (var i = 0; i < questions.length; i++) {
-        renderQuestion();
-        if (response === questions[i].answer) {
-            score++;
-            alert("Correct!");
-        } else {
-            alert("Sorry, wrong answer");
-        }
-    }
-};
-
-function renderQuestion() {
-    var q = questions[i].question;
-    question.innerHTML = "<p>" + q.question + "</p>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-}
-
-startBtn.onclick = startQuiz;
-
-// start quiz 
-function startQuiz() {
-    mainEl.remove();
-    startBtn.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block";
-    quizTimer();
-}
+        question: "What tag can be used to insert a line break or blank line in an HTML document?\n(a) <br></br>\n\(b) <body></body>\n\(c) <head></head>",
+        answer: "a"
+    },
+    {
+        question: "What does CSS stand for?\n(a) Computer Shared Sheets\n\(b) Cascading Style Sheets\n\(c) Customers Sound Stupid",
+        answer: "b"
+    },
+    {
+        question: "What's the correct tag for the largest heading?\n(a) Heading\n\(b) Head\n\(c) H1",
+        answer: "c"
+    },
+    {
+        question: "What's the correct HTML tag to make text bold?\n(a) B\n\(b) bold\n\(c) Bld",
+        answer: "b"
+    },
+    {
+        question: "What are the CSS properties that are used toa dd space around sections of content?\n(a) Cleaner\n\(b) Spacing\n\(c) Padding",
+        answer: "c"
+    },
+    {
+        question: "True or False: It is possible to make a webpage that adapts to different size screens.\n(a) True\n\(b) False\n\(c) Trick Question",
+        answer: "b"
+    },
+    {
+        question: "What kind of JS statement is used to execute actions based on a trigger or condition?\n(a) Conditional Statement\n\(b) Boolean Variable\n\(c) Fired Event",
+        answer: "a"
+    },
+    {
+        question: "In JS, what element is used to store and manipulate text, usually in multiple?\n(a) Strings\n\(b) Arrays\n\(c) Variables",
+        answer: "a"
+    },
+    {
+        question: "In JS, what element is used to store multiple values in a single variable?\n(a) Functions\n\(b) Variables\n\(c) Strings",
+        answer: "c"
+    },
+    {
+        question: "What is the format called for storing and transporting data?\n(a) JSON\n\(b) Syntax\n\(c) HTML",
+        answer: "a"
+    },
+]
 
 // Timer that counts down from 60
-function quizTimer() {
+function countdown() {
     var timeLeft = 60;
 
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
@@ -130,39 +70,25 @@ function quizTimer() {
             timerEl.textContent = '';
             // Use `clearInterval()` to stop the timer
             clearInterval(timeInterval);
-
+            // Call the `displayMessage()` function
+            displayMessage();
         }
     }, 1000);
 }
 
-function displayMessage() {
-    alert("Time is up! Let's see how you scored");
-}
+startBtn.onclick = countdown;
 
-// function checkAnswer(answer) {
-//     if (answer === questions[runningQuestion].correct) {
-//         // answer is correct
-//         score++;
-//     }
-//     count = 0;
-//     if (runningQuestion < lastQuestion) {
-//         runningQuestion++;
-//         renderQuestion();
-//     } else {
-//         // end the quiz 
-//         // Call the displayMessage() function
-//         displayMessage();
-//         clearInterval(timeInterval);
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
+    // // Loop for every question
+    // function questionsStart() {
+    //     for (var i = 0; i < questions.length; i++) {
+    //         var response = window.prompt(questions[i].question);
+    //         if (response === questions[i].answer) {
+    //             score++;
+    //             alert("Correct!");
+    //         } else {
+    //             alert("Sorry, wrong answer");
+    //             timeLeft - 5;
+    //         }
+    //     }
+    //     };
+    // });
